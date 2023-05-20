@@ -1,0 +1,138 @@
+$slide-count: 4;
+$slide-width: 30rem;
+
+
+.carousel__wrap {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 50px;
+}
+
+.carousel__inner {
+  height: 33rem;
+  position: relative;
+  width: 30rem;
+}
+
+.carousel__container {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carousel__slide-list {
+  height: 100%;
+  left: 50%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: calc(#{($slide-count + 0.53) * $slide-width * 2});
+}
+
+.carousel__slide-item {
+  display: inline-block;
+  height: $slide-width;
+  margin: 0;
+  padding: 1rem;
+  position: absolute;
+  transition: all 0.3s;
+  width: $slide-width;
+}
+
+.carousel__slide-item-img-link {
+  padding: 0 10px;
+
+  img {
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    width: 100%;
+  }
+
+  &::after {
+    align-items: center;
+    background: rgba(black, 0.5);
+    color: white;
+    content: "read more";
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    width: 100%;
+  }
+
+}
+
+.carousel__btn {
+  align-items: center;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--prev {
+    left: 3px;
+    z-index: 1;
+  }
+
+  &--next {
+    right: 3px;
+  }
+}
+
+.carousel__btn-arrow {
+  border: solid white;
+  border-width: 0 0.4rem 0.4rem 0;
+  height: 1rem;
+  padding: 3px;
+  width: 1rem;
+  z-index: 10;
+
+  &--left {
+    transform: rotate(135deg);
+  }
+
+  &--right {
+    transform: rotate(-45deg);
+  }
+}
+
+.carousel__dots {
+  display: inline-block;
+  left: 50%;
+  bottom: 95px;
+  position: absolute;
+  transform: translateX(-50%);
+
+  .dot {
+    background: white;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 15px;
+    outline: none;
+    transform: scale(0.5);
+    width: 15px;
+    padding: 0.2em 0.2em;
+    font-size: 15px;
+
+    &.active {
+      background: #E0A014F0;
+    }
+  }
+}
